@@ -1,70 +1,535 @@
-<!DOCTYPE html>
-<html lang="en">
+:root {
+    --primary: #2c5530;       /* Earth green from your image */
+    --secondary: #4a7c59;     /* Medium green */
+    --accent: #d4af37;        /* Gold accent */
+    --light: #f8f9fa;         /* Clean white */
+    --dark: #1a331e;          /* Dark green */
+    --background: #f1f3f4;    /* Light background */
+    --card-bg: #ffffff;       /* White cards */
+    --text-dark: #2d3748;     /* Text color */
+    --text-light: #718096;    /* Lighter text */
+    --gradient-primary: linear-gradient(135deg, #2c5530, #4a7c59);
+    --gradient-accent: linear-gradient(135deg, #d4af37, #b8941f);
+}
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Safi Active</title>
-  <link rel="stylesheet" href="all.css">
- 
-  <html>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
-  <head>
+body {
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: var(--background);
+    overflow-y: scroll;
+}
 
-  </html>
-
-  <ul class="act">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="aboutA.html"> About me </a></li>
-    <li><a href="ican.html">Education</a></li>
-    <li><a href="Vision.html"> Vision & Dream</a></li>
-    <li><a href="Contact.html">Contact</a></li>
-  </ul>
-
-</head>
-
-<body>
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
 
 
-  <header>
-    <h1>Safi Ngendahayo</h1>
-    <p>Passionate Innovator and Future Embedded Systems Engineer</p>
+section {
+    padding: 80px 0;
+}
 
-    <section class="hom">
-      <div class="hero-content">
-        <h3> Welcome!
-          I’m <strong>Safi Ngendahayo Active</strong></h1>
-          <p class="intro">
-            I’m a software <em>student from</em> the Democratic Republic of Congo,
-            passionate about innovation and technology;and I aim to become an embedded systems engineer
-            who builds smart solutions for the future of mining sectors in all over the world.
-          </p>
-          <q>“When I am quiet, I am thinking; when I am making noise, I am learning.”</q>
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+    position: relative;
+}
 
-          <p> My ambition is to become a great embedded systems engineer who develops innovative
-            technologies that improve efficiency and ensure the safety of miners. I want to bring
-            positive change to the mining industry by making worker safety a top priority through
-            smart and reliable engineering solutions</p>
+.section-title h2 {
+    font-size: 2.5rem;
+    color: var(--primary);
+    display: inline-block;
+    padding-bottom: 10px;
+}
 
-      </div>
+.section-title h2::after {
+    content: '';
+    position: absolute;
+    width: 70px;
+    height: 3px;
+    background: var(--accent);
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.btn {
+    display: inline-block;
+    padding: 14px 32px;
+    background-color: var(--primary); /* solid green background */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    
+}
 
-    </section>
-    <footer>
-      <footer>
-        <div class="social-icons">
-          <img src="insta.jpg" alt="insta" class="icon" width="2%" height="2%">
-          <img src="whats.jpg" alt="WhatsApp" class="icon" width="2%" height="2%">
-          <img src="linkd.png" alt="LinkedIn" class="icon" width="2%" height="2%">
-          <img src="face.png" alt="facebook" class="icon" width="2%" height="2%">
-        </div>
-      </footer>
-      <p>&copy; 2025 Safi Ngendahayo | All rights reserved</p>
-    </footer>
-    <form>
-      <label for="myfile">Select a file:</label>
-      <input type="file" id="myfile" name="myfile">
-    </form>
+.btn:hover {
+    background-color: var(--accent); /* only change background to accent */
+    color: white; /* keep text white */
+}
+/* Header Styles */
+header {
+    background: var(--primary);
+    color: white;
+    padding: 15px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+}
 
-</body>
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
-</html>
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: white;
+}
+
+.logo span {
+    color: var(--accent);
+}
+
+/* Navigation Styles */
+/* Navigation container */
+nav ul {
+    display: inline-flex;
+    gap: 5px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 50px;
+    padding: 6px;
+    list-style: none;
+    margin: 0;
+}
+
+/* Navigation links */
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 10px 20px;
+    border-radius: 50px;
+    transition: none; /* optional, remove animation */
+}
+
+/* Normal hover: simple color change */
+nav ul li a:hover {
+    color: var(--dark);        /* text color change */
+    background-color: var(--accent); /* optional background highlight */
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(44, 85, 48, 0.9), rgba(44, 85, 48, 0.95));
+    color: white;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin-top: 0;
+}
+
+.hero-content h1 {
+    font-size: 3.2rem;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.hero-content p {
+    font-size: 1.3rem;
+    margin-bottom: 30px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0.9;
+}
+
+.highlight {
+    color: var(--accent);
+    font-weight: 700;
+}
+
+/* About Section */
+.about-content {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.about-img {
+    flex: 1;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+}
+
+.about-img img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.about-img:hover img {
+    transform: scale(1.05);
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-text h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: var(--primary);
+}
+
+.about-text p {
+    margin-bottom: 20px;
+    color: var(--text-dark);
+}
+
+/* Skills Section */
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.skill-category {
+    background: var(--card-bg);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    border-left: 4px solid var(--accent);
+    transition: transform 0.3s ease;
+}
+
+.skill-category:hover {
+    transform: translateY(-10px);
+}
+
+.skill-category h3 {
+    color: var(--primary);
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--background);
+}
+
+.skill-item {
+    margin-bottom: 20px;
+}
+
+.skill-name {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.skill-bar {
+    height: 10px;
+    background: var(--background);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.skill-level {
+    height: 100%;
+    background: var(--gradient-primary);
+    border-radius: 5px;
+    transition: width 1s ease-in-out;
+}
+
+/* Experience Section */
+/* Horizontal Timeline Section */
+.experience {
+    background: var(--light);
+    padding: 80px 0;
+    overflow: hidden;
+}
+
+/* Simple Vertical Timeline */
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 30px;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: var(--gradient-primary);
+    border-radius: 10px;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 40px;
+    padding-left: 80px;
+}
+
+.timeline-content {
+    background: var(--card-bg);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    border-left: 4px solid var(--accent);
+    transition: all 0.3s ease;
+}
+
+.timeline-content::before {
+    content: '';
+    position: absolute;
+    left: 20px;
+    top: 30px;
+    width: 20px;
+    height: 20px;
+    background: var(--gradient-primary);
+    border: 4px solid var(--card-bg);
+    border-radius: 50%;
+    box-shadow: 0 0 0 3px var(--accent);
+}
+
+.timeline-content:hover {
+    transform: translateX(10px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.timeline-content h3 {
+    color: var(--primary);
+    margin-bottom: 8px;
+    font-size: 1.3rem;
+}
+
+.timeline-content .date {
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+}
+
+.timeline-content p {
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+/* Vision Section */
+.vision {
+    background: var(--gradient-primary);
+    color: white;
+    position: relative;
+}
+
+.vision-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.vision-content h2 {
+    color: white;
+}
+
+.vision-content h2::after {
+    background: var(--accent);
+}
+
+.vision-content p {
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+    opacity: 0.95;
+}
+
+/* Contact Section */
+.contact-container {
+    display: flex;
+    gap: 50px;
+}
+
+.contact-info {
+    flex: 1;
+}
+
+.contact-info h3 {
+    margin-bottom: 25px;
+    color: var(--primary);
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+    padding: 15px;
+    background: var(--card-bg);
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+.contact-item:hover {
+    transform: translateX(10px);
+}
+
+.contact-icon {
+    width: 50px;
+    height: 50px;
+    background: var(--gradient-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    color: white;
+    font-weight: bold;
+}
+
+.contact-form {
+    flex: 1;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--text-dark);
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: var(--card-bg);
+}
+
+.form-control:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+    outline: none;
+}
+
+textarea.form-control {
+    height: 150px;
+    resize: vertical;
+}
+
+/* Footer */
+footer {
+    background: var(--dark);
+    color: white;
+    padding: 40px 0;
+    text-align: center;
+}
+
+.social-links {
+    margin-bottom: 25px;
+}
+
+.social-links a {
+    display: inline-block;
+    width: 10%;
+    height: 45px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 50%;
+    margin: 0 8px;
+    color: white;
+    line-height: 45px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    background: var(--accent);
+    transform: translateY(-5px);
+    color: var(--dark);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 3px;
+    }
+    
+    nav ul li a {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+    
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    
+    .about-content {
+        flex-direction: column;
+    }
+    
+    .timeline::before {
+        left: 20px;
+    }
+    
+    .timeline-item {
+        width: 100%;
+        padding-left: 50px;
+        padding-right: 20px;
+        left: 0 !important;
+    }
+    
+    .contact-container {
+        flex-direction: column;
+    }
+    
+    section {
+        padding: 60px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    
+    .section-title h2 {
+        font-size: 2rem;
+    }
+    
+    nav ul li a {
+        padding: 6px 12px;
+        font-size: 0.85rem;
+    }
+    
+    .skills-container {
+        grid-template-columns: 1fr;
+    }
+}
